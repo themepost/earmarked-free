@@ -1,0 +1,1635 @@
+/*
+Theme Name: Earmarked
+Theme URI: https://themepost.dev/earmarked
+Author: Themepost
+Author URI: https://themepost.dev
+Description: Earmarked is a sleek, minimalist theme designed to be the perfect foundation for creating blogs.
+Version: 1.0.1
+*/
+
+/*--------------------------------------------------------------
+Reset
+--------------------------------------------------------------*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #4a4a4a;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+h4 { font-size: 1.2em;
+}
+
+h5 { font-size: 1.1em;
+}
+
+h6 { font-size: 1em;
+}
+
+hr {
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 0;
+	height: 1px;
+	margin: 1.5em 0;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+ul {
+	list-style: disc;
+	margin: 0 0 34px 24px;
+}
+
+ol {
+	list-style: decimal;
+	margin: 0 0 34px 24px;
+}
+
+li > ul {
+	margin-bottom: 0;
+	margin-left: 24px;
+}
+
+li > ol {
+	margin-bottom: 0;
+	margin-left: 35px;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 34px;
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	font-style: italic;
+	margin: 0 0 0 1.5em;
+}
+
+.format-quote blockquote{
+	margin: 0;
+}
+
+blockquote em, blockquote i, blockquote cite {
+	font-style: normal;
+}
+
+blockquote cite,
+.quote-caption {
+	color: #808080;
+	font-weight: 400;
+	letter-spacing: 0.15em;
+	padding-left: 0px;
+	position: relative;
+	text-transform: uppercase;
+	display: block;
+}
+
+.quote-caption {
+	display: inline;
+}
+
+blockquote cite a,
+.quote-caption a {
+	color: #808080;
+}
+
+address {
+	margin: 0 0 34px;
+}
+
+pre {
+	background: #f5f5f5;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	margin-bottom: 34px;
+	padding: 14px;
+	overflow: auto;
+	max-width: 100%;
+}
+
+code, kbd, tt, var {
+	font: 19px/1.7894736842 Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+mark, ins {
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+figure {
+	margin: 0 0 51px;
+}
+
+table,
+th,
+td {
+	border: 1px solid #ededed;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin: 0 0 24px;
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: 700;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+}
+
+th, td {
+	padding: 6px;
+}
+
+del {
+	color: #9dabb0;
+}
+
+
+/*--------------------------------------------------------------
+Forms
+--------------------------------------------------------------*/
+
+button,
+input,
+select,
+textarea {
+	margin: 0;
+	/* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline;
+	/* Improves appearance and consistency in all browsers */
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	padding: 5px 20px;
+	background: #4a4a4a;
+	border: 1px solid #000;
+	color: white;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		padding: 5px 10px;
+	}
+}
+
+button:hover,
+button:focus,
+button:active,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:active,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:active,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
+	background: #333;
+}
+
+button:hover,
+button:focus,
+button:active,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:active,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:active,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
+	border-color: #333;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	padding: 10px;
+	width: 100%;
+	background: none;
+	border: 1px solid #f1f2f3;
+}
+
+@media screen and (max-width: 767px) {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	textarea {
+		padding: 5px;
+	}
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	border: 1px solid #ddd;
+}
+
+textarea {
+	overflow: auto;
+	/* Removes default vertical scrollbar in IE6/7/8/9 */
+	vertical-align: top;
+	/* Improves readability and alignment in all browsers */
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+label[class*="radio"], label[class*="checkbox"] {
+	margin-bottom: 0;
+	font-size: 0.73em;
+	font-weight: normal;
+}
+
+/* Password protected posts from */
+.post-password-form label {
+	display: block;
+	margin-bottom: 0;
+}
+.post-password-form input[type="password"] {
+	margin: 10px 0;
+}
+
+/* Links */
+a {
+	color: #232323;
+	text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #333;
+}
+
+.page-links{
+	color: #aaa;
+}
+
+.page-links a{
+	font-weight: bold;
+}
+
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+/*--------------------------------------------------------------
+Container
+--------------------------------------------------------------*/
+
+#page {
+	max-width: 1170px;
+	padding: 0 30px;
+	overflow: hidden;
+	background:  #fff;
+}
+
+.content-area {
+	float: left;
+	width: 65.470085470085%;
+	overflow: hidden;
+}
+
+.site-content {
+	margin: 40px 0;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 31.111111111111%;
+	font-size: 15px;
+}
+
+
+/*--------------------------------------------------------------
+Masthead
+--------------------------------------------------------------*/
+
+#masthead {
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+
+.site-title a {
+	color: #000;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.header-image {
+	border-top: 1px solid #ccc;
+	clear: left;
+	max-width: 100%;
+	overflow: hidden;
+	min-height: 250px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.header-wrapper {
+	position: relative;
+}
+
+/* Search Toggle */
+.search-toggle {
+	position: absolute;
+	top: 20px;
+	right: 5px;
+	display: block;
+	height: 48px;
+	cursor: pointer;
+}
+
+.search-toggle:before {
+	font: var(--fa-font-solid);
+	font-size: 20px;
+	color: #4a4a4a;
+	content: "\f002";
+}
+
+.search-toggle:hover:before {
+	color: #232323;
+}
+
+
+/*--------------------------------------------------------------
+Menu
+--------------------------------------------------------------*/
+
+.main-navigation {
+	float: left;
+	width: 60%;
+	margin: 0;
+	font-weight: 700;
+	z-index: 999;
+}
+
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-navigation li {
+	float: left;
+	position: relative;
+	margin: 0 50px 0 0;
+}
+
+.main-navigation a {
+	color: #333;
+	display: block;
+	text-decoration: none;
+	padding: 20px 0;
+}
+
+.main-navigation a:hover {
+	display: block;
+	padding: 20px 0;
+	text-decoration: underline;
+}
+
+.main-navigation ul ul {
+	float: left;
+	position: absolute;
+	top:4em;
+	left: -999em;
+	z-index: 99999;
+	background: #fff;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	visibility: hidden;
+	opacity: 0;
+}
+
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 750px) {
+	#site-navigation{
+		width: 45%;
+	}
+
+	.main-navigation.toggled .nav-menu {
+		display: block;
+		border: none;
+		background: none;
+		color: #4a4a4a;
+	}
+
+	button.menu-toggle {
+		display: block;
+		border: none;
+		background: none;
+		color: #4a4a4a;
+		margin: 0;
+		padding: 10px 0;
+	}
+
+	.menu-toggle:hover {
+		display: block;
+		border: none;
+		background: none;
+		color: #903000;
+		margin: 0;
+		padding: 10px 0;
+	}
+
+	.menu-toggle:before {
+		content: "\f0c9";
+		font: var(--fa-font-solid);
+		margin-right: 4px;
+		font-weight: bold;
+	}
+
+	.toggled .menu-toggle:before {
+		content: "\f00d";
+		font: var(--fa-font-solid);
+		margin-right: 6px;
+		font-weight: bold;
+	}
+
+
+	.main-navigation ul {
+		display: none;
+		margin: 0 0 10px;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.main-navigation ul a {
+		width: 100%;
+		padding: 5px 0;
+	}
+
+	.nav-menu li {
+		display: block;
+		float: none;
+	}
+
+	.search-toggle {
+		top: 5px;
+	}
+
+	.search-toggle:before {
+		font-size: 15px;
+	}
+}
+
+/* Social Links */
+.social-navigation {
+	margin: 0 0 15px;
+	width: 100%;
+	font: var(--fa-font-solid);
+	overflow: hidden;
+}
+
+#sidebar-externals {
+	margin: 15px 0;
+	padding: 0;
+}
+
+.social-links a {
+	font-size: 18px;
+	line-height: 64px;
+	display: block;
+}
+
+.social-links ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.social-navigation li {
+	float: left;
+	margin: 0 1px 1px 0;
+}
+
+.social-links a {
+	width: 64px;
+	height: 64px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	float: left;
+	text-align: center;
+	margin: 0 15px 15px 0;
+}
+
+.social-links a:before {
+	color: #333;
+	font: var(--fa-font-brands);
+	font-weight: 400;
+	font-size: 18px;
+	width: 64px;
+	height: 64px;
+	line-height: 64px;
+	text-align: center;
+	width: 60px;
+	height: 60px;
+}
+
+.social-links a:hover:before {
+	color: var(--ghost-accent-color);
+}
+
+.social-navigation a[href$="/feed/"]:before {
+	font: var(--fa-font-solid);
+	content: "\f09e";
+}
+
+.social-links ul a[href*="facebook.com"]:before {
+	content: "\f09a";
+}
+
+.social-links ul a[href*="x.com"]:before,
+.social-links ul a[href*="twitter.com"]:before {
+	content: "\e61b";
+}
+
+.social-links ul a[href*="dribbble.com"]:before {
+	content: "\f17d";
+}
+
+.social-links ul a[href*="behance.net"]:before {
+	content: "\f1b4";
+}
+
+.social-links ul a[href*="pinterest.com"]:before {
+	content: "\f231";
+}
+
+
+.social-links ul a[href*="youtube.com"]:before {
+	content: "\f16a";
+}
+
+.social-links ul a[href*="flickr.com"]:before {
+	content: "\f16e";
+}
+
+.social-links ul a[href*="vimeo.com"]:before {
+	content: "\f27d";
+}
+
+.social-links ul a[href*="instagram.com"]:before {
+	content: "\f16d";
+}
+
+.social-links ul a[href*="codepen.io"]:before {
+	content: "\f1cb";
+}
+
+.social-links ul a[href*="linkedin.com"]:before {
+	content: "\f0e1";
+}
+
+.social-links ul a[href*="github.com"]:before {
+	content: '\f09b';
+}
+
+.social-links ul a[href*="wordpress.com"]:before,
+.social-links ul a[href*="wordpress.org"]:before {
+	content: '\f411';
+}
+
+.social-links ul a[href*="tiktok.com"]:before {
+	content: '\e07b';
+}
+
+.social-links ul a:before {
+	content: "\f013";
+}
+
+.social-links ul a[href*="/feed"]:before {
+	content: '\f09e';
+	font: var(--fa-font-solid);
+	font-weight: 900;
+}
+
+.social-links .nav-sign-up a:before {
+	font: var(--fa-font-solid);
+	content: "\f2bd";
+}
+
+.social-navigation a[href*="mailto:"]:before {
+	font: var(--fa-font-solid);
+	content: "\f0e0";
+}
+
+
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+
+.hentry {
+	border-bottom: 1px solid #ccc;
+	margin: 0 0 2em;
+	padding: 0 0 2em;
+	overflow: hidden;
+}
+
+.page-template .hentry,
+.post-template .hentry {
+	border-bottom: 0;
+}
+
+.content-wrapper {
+	padding: 0 0 0 24%;
+}
+
+.entry-meta{
+	position: relative;
+	float: left;
+	width: 22%;
+	text-align: left;
+	font-size: 15px;
+	margin-top: 4px;
+	color: #aaa;
+	line-height: 1.5;
+}
+
+.entry-title a {
+	color: #4a4a4a;
+}
+
+.entry-title a:hover {
+	text-decoration: underline;
+}
+
+.entry-meta a {
+	color: #aaa;
+}
+
+.entry-meta a:hover {
+	color: #000;
+}
+
+.archive-title {
+	margin: 0 0 1.5em;
+	padding: 0 0 1.5em;
+}
+
+.archive-title:before {
+	margin-right: 10px;
+}
+
+.byline,
+.updated {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+/* Pagination */
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: auto;
+	text-align: left;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: auto;
+}
+
+.paging-navigation{
+	margin: 30px auto;
+	overflow: hidden;
+	text-align: center;
+	border-radius: 50px;
+	padding: 20px 30px;
+	border: 1px solid #ccc;
+	width: 300px;
+}
+
+/* Navigation */
+#content [class*="navigation"] {
+	overflow: hidden;
+}
+
+[class*="navigation"] .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+[class*="navigation"] .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+.meta-nav {
+	font: var(--fa-font-solid);
+	text-indent: -9999px;
+}
+
+.fa-arrow-circle-right {
+	margin: 0 0 0 4px;
+}
+
+.fa-arrow-circle-left {
+	margin: 0 4px 0 0;
+}
+
+
+/* Drop the share links in the space to the right.
+   Doing it like this means it's easier for the author bio
+   to be flexible at smaller screen sizes while the share
+   links remain at a fixed width the whole time */
+.post-footer .share {
+	float: left;
+	width: 220px !important;
+}
+
+.post-footer .share a {
+	font-size: 1.8rem;
+	display: inline-block;
+	margin: 1rem 1.6rem 1.6rem 0;
+	color: #BBC7CC;
+	text-decoration: none;
+}
+
+.post-footer .share a:hover {
+	color: #50585D;
+}
+
+
+/*--------------------------------------------------------------
+Sidebar
+--------------------------------------------------------------*/
+
+.widget {
+	margin: 0 0 1.5em;
+	font-size: 15px;
+}
+
+.widget-title,
+.widget-title a {
+	color: #999;
+	font-size: 20px;
+}
+
+
+.widget-title a img {
+	display: none;
+}
+
+.widget ul {
+	margin: 10px 0;
+	list-style-type: none;
+}
+
+.widget p {
+	color: #aaa;
+}
+
+.widget p a {
+	font-weight: bold;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------
+Responsive
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 750px) {
+	#page{
+		margin: 0 auto;
+		padding: 40px;
+	}
+
+	.content-area {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	.site-main {
+		margin: 0;
+	}
+
+	.site-content {
+		margin: 60px 0;
+	}
+
+	.site-content .widget-area {
+		float: none;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.content-wrapper {
+		padding: 0;
+	}
+
+	.entry-meta {
+		position: relative;
+		float: none;
+		width: 100%;
+		text-align: left;
+		font-size: 15px;
+		margin-top: 0px;
+		margin-bottom: 1em;
+		color: #aaa;
+	}
+}
+
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+.site-info span {
+	display: block;
+}
+
+.site-info a {
+	color: #333;
+	font-weight: 700;
+}
+
+.site-info a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* The author credit area after the post */
+.post-footer {
+	position: relative;
+	margin: 20px 0 0 0;
+}
+
+/* Create some space to the right for the share links */
+.post-footer .author {
+	margin-right: 180px;
+	float: left;
+}
+
+/* Drop the share links in the space to the right.
+   Doing it like this means it's easier for the author bio
+   to be flexible at smaller screen sizes while the share
+   links remain at a fixed width the whole time */
+
+.sharing-buttons {
+	list-style: none;
+	margin: 15px 0 0;
+	padding: 0;
+}
+
+.sharing-buttons li {
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.sharing-buttons a {
+	border-bottom: 2px solid #333;
+	padding: 0;
+}
+
+.sharing-buttons a:hover {
+	border-bottom: 2px solid transparent;
+	padding: 0;
+}
+
+
+/*	-----------------------------------------------------------------------------
+	Paginate
+	----------------------------------------------------------------------------- */
+.pagination {
+	margin: 30px auto;
+	overflow: hidden;
+	text-align: center;
+	border-radius: 50px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	max-width: 230px;
+}
+
+.pagination a {
+	display: inline-block;
+	color: #000;
+	font-size: 19px;
+}
+
+.older-posts {
+	margin: 0 0 0 15px;
+}
+
+.newer-posts {
+	margin: 0 15px 0 0;
+}
+
+
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. */
+.kg-width-wide {
+	grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+	grid-column: full-start / full-end;
+}
+
+.kg-width-full img {
+	width: 100%;
+}
+
+.gh-feature-image {
+	display: block;
+	margin-top: 51px;
+}
+
+.gh-feature-image a {
+	display: block;
+}
+
+.gh-viewport {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.gh-outer {
+	padding: 0 max(4vmin, 20px);
+}
+
+.gh-outer .gh-outer {
+	padding: 0;
+}
+
+.gh-inner {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.gh-main {
+	flex-grow: 1;
+}
+
+.gh-canvas > * {
+	grid-column: main;
+}
+
+.kg-width-wide,
+.kg-content-wide > div {
+	grid-column: wide;
+}
+
+.kg-width-full {
+	grid-column: full;
+}
+
+/* Default vertical spacing */
+.gh-content > * + * {
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+/* Remove space between full-width cards */
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
+	margin-top: 0;
+}
+
+/* Add back a top margin to all headings,
+unless a heading is the very first element in the post content */
+.gh-content > [id]:not(:first-child) {
+	margin-top: 15px;
+}
+
+/* Add drop cap setting */
+.post-template .gh-content.drop-cap > p:first-of-type:first-letter {
+	margin: 0 0.2em 0 0;
+	font-size: 3.1em;
+	float: left;
+	line-height: 1;
+	margin-left: -1px;
+	font-weight: 700;
+}
+
+.has-serif-body.post-template .gh-content.drop-cap > p:first-of-type:first-letter {
+	font-size: 3.2em;
+}
+
+/* Add a small margin between a heading and paragraph after it */
+.gh-content > [id] + p {
+   margin-top: 15px;
+}
+
+/* A larger margin before/after dividers, blockquotes and embeds */
+.gh-content > :is(hr, blockquote, iframe) {
+	position: relative;
+	margin-top: 15px;
+}
+
+.gh-content > :is(hr, blockquote, iframe) + * {
+	margin-top: 15px;
+}
+
+/* Now the content typography styles */
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > :is(ul, ol, p) {
+	font-size: 0.95em;
+}
+
+.gh-content :is(ul, ol) {
+	padding-left: 28px;
+}
+
+.gh-content :is(li + li, li :is(ul, ol)) {
+	margin-top: 8px;
+}
+
+.gh-content ol ol li {
+	list-style-type: lower-alpha;
+}
+
+.gh-content ol ol ol li {
+	list-style-type: lower-roman;
+}
+
+.gh-content hr {
+	width: 100%;
+	height: 1px;
+	background-color: #eee;
+	border: 0;
+}
+
+.gh-content .gh-table {
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.gh-content .gh-table table {
+	width: 100%;
+	font-size: 1.5rem;
+	white-space: nowrap;
+	vertical-align: top;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.gh-content .gh-table table th {
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.gh-content .gh-table table :is(th, td),
+.gh-content .gh-table table td {
+	padding: 6px 12px;
+	border-bottom: 1px solid #eee;
+}
+
+.gh-content .gh-table table :is(th, td):first-child {
+	padding-left: 0;
+}
+
+.gh-content .gh-table table :is(th, td):last-child {
+	padding-right: 0;
+}
+
+.gh-content pre {
+	overflow: auto;
+	padding: 16px;
+	font-size: 1.5rem;
+	line-height: 1.5em;
+	background: #eee;
+	border-radius: 6px;
+}
+
+.gh-content :not(pre) > code {
+	vertical-align: baseline;
+	padding: 0.15em 0.4em;
+	font-weight: 400;
+	font-size: 0.95em;
+	line-height: 1em;
+	border-radius: 0.25em;
+}
+
+/* 16. Cards
+/* ---------------------------------------------------------- */
+
+/* Add extra margin before/after any cards, except for when immediately preceeded by a heading */
+
+.gh-content :not(.kg-card):not(table):not([id]) + :is(.kg-card, table) {
+	margin-top: 2em;
+}
+
+.gh-content :is(.kg-card, table) + :not(.kg-card):not(table):not([id]) {
+	margin-top: 2em;
+}
+
+.gh-content :not(.kg-card):not([id]) + .kg-card.kg-width-full {
+	margin-top: 2em;
+}
+
+.gh-content .kg-card.kg-width-full + :not(.kg-card):not([id]) {
+	margin-top: 2em;
+}
+
+/* Image */
+
+.kg-image img {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
+/* Embed */
+
+.kg-embed-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+/* Gallery */
+
+.kg-image[width][height],
+.kg-gallery-image {
+	cursor: pointer;
+}
+
+.kg-image-card a:hover,
+.kg-gallery-image a:hover {
+	opacity: 1 !important;
+}
+
+/* Toggle */
+
+.kg-card.kg-toggle-card .kg-toggle-heading-text {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+}
+
+/* Callout */
+
+.kg-callout-card.kg-card {
+	border-radius: 0.25em;
+}
+
+/* Blockquote */
+
+blockquote:not([class]) {
+	padding-left: 2rem;
+	border-left: 4px solid #eee;
+}
+
+blockquote.kg-blockquote-alt {
+	font-style: normal;
+	font-weight: 400;
+}
+
+/* Button */
+
+.kg-card.kg-button-card .kg-btn {
+	height: unset;
+	padding: .6em 1.2em;
+	text-align: center;
+	font-size: 1em;
+	line-height: 1.2em;
+}
+
+/* Bookmark */
+
+.kg-bookmark-card .kg-bookmark-container {
+	border-radius: 0.25em !important;
+}
+
+.kg-bookmark-card .kg-bookmark-container:hover {
+	opacity: 1;
+}
+
+.kg-bookmark-card .kg-bookmark-content {
+	padding: 1.15em;
+}
+
+.kg-bookmark-card .kg-bookmark-title {
+	font-size: 0.9em;
+}
+
+.kg-bookmark-card .kg-bookmark-description {
+	max-height: none;
+	margin-top: 0.3em;
+	font-size: 0.8em;
+}
+
+.kg-bookmark-card .kg-bookmark-metadata {
+	font-size: 0.8em;
+}
+
+.kg-bookmark-card .kg-bookmark-thumbnail img {
+	border-radius: 0 0.2em 0.2em 0;
+}
+
+/* Product */
+
+.kg-product-card.kg-card .kg-product-card-image {
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.kg-product-card.kg-card a.kg-product-card-button {
+	height: 2.8em;
+	margin-top: 12px;
+}
+
+/* File */
+
+.kg-file-card.kg-card .kg-file-card-container {
+	padding: 0.6em;
+}
+
+.kg-file-card.kg-card .kg-file-card-contents {
+	margin: 4px 8px 6px;
+}
+
+.kg-file-card.kg-card .kg-file-card-metadata {
+	font-size: 0.9em;
+}
+
+.kg-file-card.kg-card .kg-file-card-filesize::before {
+	margin-right: 6px;
+	margin-left: 6px;
+}
+
+/* Caption */
+
+figcaption {
+	margin-top: 12px;
+	text-align: center;
+}
+
+.kg-card.kg-width-full figcaption {
+	padding: 0 16px;
+}
+
+figcaption a {
+	text-decoration: underline;
+}
+
+
+/* 17. Comments
+/* ---------------------------------------------------------- */
+
+.gh-comments {
+	margin-top: 48px;
+}
+
+.article-comments {
+	background: #f7f7f7;
+	padding: 4%;
+}
+
+
+/* 18. Recent posts
+/* ---------------------------------------------------------- */
+
+.post-template .gh-container {
+	margin-top: 120px;
+}
+
+.post-template .gh-container-inner {
+	display: block;
+}
+
+.post-template .gh-container.is-grid .gh-feed {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.post-template .gh-container .gh-container-title {
+	display: block;
+}
+
+/* 19. Archive
+/* ---------------------------------------------------------- */
+
+.gh-archive {
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	margin-block: 80px 24px;
+}
+
+.gh-archive.has-image {
+	margin-top: 48px;
+}
+
+.gh-archive-inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column: 1 / -1;
+	padding-bottom: clamp(40px, 2.73vw + 29.09px, 64px);
+}
+
+.gh-archive.has-image .gh-archive-inner {
+	align-items: center;
+	grid-column: 1 / -1;
+}
+
+.gh-archive:not(.has-sidebar):not(.has-image) .gh-archive-inner {
+	grid-column: 3 / span 12;
+}
+
+.gh-archive .gh-article-image {
+	grid-column: auto;
+	margin-top: 0;
+}
+
+:is(.tag-template, .author-template) .gh-container {
+	margin-top: 0;
+}
+
+.author-template .gh-archive-inner {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	gap: 24px;
+}
+
+.author-template .gh-article-image {
+	margin-top: 0;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.author-template .gh-article-title {
+	font-size: 3.6rem;
+}
+
+.gh-author-meta {
+	display: flex;
+	gap: 10px;
+	margin-top: 14px;
+	font-size: 1.5rem;
+	font-weight: 550;
+}
+
+.gh-author-meta a {
+	color: inherit;
+}
+
+.gh-author-social {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	padding-left: 3px;
+}
+
+.gh-author-social svg {
+	width: 20px;
+	height: 20px;
+}
+
+@media (max-width: 1199px) {
+	.gh-archive {
+		display: block;
+	}
+}

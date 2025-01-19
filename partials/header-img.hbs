@@ -1,0 +1,12 @@
+{{! Header image and featured image for Earmarked }}
+<div class="header-image" 
+	{{#post}}
+		{{#if feature_image}}
+		 	style="background-image: url('{{img_url feature_image}}');">
+		{{/if}}
+	{{else}}
+		{{#if @site.cover_image}}
+			style="background-image: url('{{@site.cover_image}}');">
+		{{/if}}
+	{{/post}}
+</div><!-- .header-image -->
